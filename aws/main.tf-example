@@ -1,0 +1,23 @@
+resource "aws_iam_user" "first-user" {
+    name = "first-iam-user"
+}
+
+resource "aws_iam_policy" "admin-policy"{
+    name = "Administrator_Custom_policy"
+    policy = jsonencode({
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1713232393743",
+      "Action": "*",
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+})
+}
+
+resource "aws_iam_user_policy_attachment" "test-attach" {
+  user       = aws_iam_user.first-user.name
+  policy_arn = aws_iam_policy.admin-policy.arn
+}
