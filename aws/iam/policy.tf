@@ -17,7 +17,8 @@ resource "aws_iam_policy" "admin_policy" {
 resource "aws_iam_policy" "storage_policy" {
   name        = "StoragePolicy"
   description = "Policy for storage access"
-  policy = jsonencode({
+  policy = <<EOF
+{
     Version = "2012-10-17"
     Statement = [
       {
@@ -28,5 +29,6 @@ resource "aws_iam_policy" "storage_policy" {
         "Resource" = "*"
       }
     ]
-  })
+}
+EOF
 }
