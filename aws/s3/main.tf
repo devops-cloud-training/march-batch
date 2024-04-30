@@ -18,6 +18,6 @@ resource "aws_iam_user" "users" {
 }
 
 
-resource "aws_iam_user" "users1" {
+resource "aws_iam_user" "users" {
   name  = "sathish123e32434"
 }
