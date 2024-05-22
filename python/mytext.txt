@@ -1,0 +1,4 @@
+this is a text file
+contains some texts
+third line
+fourth line
