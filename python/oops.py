@@ -74,46 +74,102 @@
 
 # inheritance, polymorphism
 
-class Person():
-    name = ""
-    age =""
-    gender = ""
-    govd_id = ""
+# class Person():
+#     name = ""
+#     age =""
+#     gender = ""
+#     govd_id = ""
 
-    def __init__(self, person_name, person_age, person_gender, person_id):
-        self.name = person_name
-        self.age = person_age
-        self.gender = person_gender
-        self.govd_id = person_id
+#     def __init__(self, person_name, person_age, person_gender, person_id):
+#         self.name = person_name
+#         self.age = person_age
+#         self.gender = person_gender
+#         self.govd_id = person_id
     
-    def display_your_id(self):
-        print("My name is: ",self.name)
-        print("My age is ",self.age)
-        print("I'm a ", self.gender)
-        print("My govt id is ",self.govd_id)
+#     def display_your_id(self):
+#         print("My name is: ",self.name)
+#         print("My age is ",self.age)
+#         print("I'm a ", self.gender)
+#         print("My govt id is ",self.govd_id)
 
-class Employee(Person):
+# class Employee(Person):
 
-    salary = 0
-    designation = ""
+#     salary = 0
+#     designation = ""
 
-    def __init__(self, emp_name, emp_age, emp_gender, emp_govtid, emp_salary, emp_designation):
-        self.salary = emp_salary
-        self.designation = emp_designation
-        Person.__init__(self, emp_name, emp_age, emp_gender, emp_govtid)
+#     def __init__(self, emp_name, emp_age, emp_gender, emp_govtid, emp_salary, emp_designation):
+#         self.salary = emp_salary
+#         self.designation = emp_designation
+#         Person.__init__(self, emp_name, emp_age, emp_gender, emp_govtid)
 
-    def display_your_id(self):
-        super().display_your_id()
-        #Person.disploy_your_id()
-        # print("My name is: ",self.name)
-        # print("My age is ",self.age)
-        # print("I'm a ", self.gender)
-        # print("My govt id is ",self.govd_id)
-        print("My salary is",self.salary)
-        print("My designation is,",self.designation)
+#     def display_your_id(self):
+#         super().display_your_id()
+#         #Person.disploy_your_id()
+#         # print("My name is: ",self.name)
+#         # print("My age is ",self.age)
+#         # print("I'm a ", self.gender)
+#         # print("My govt id is ",self.govd_id)
+#         print("My salary is",self.salary)
+#         print("My designation is,",self.designation)
 
-employee1 = Employee("sathish",16,"male",12345,900000000,"Architect")
-employee1.display_your_id()
+# employee1 = Employee("sathish",16,"male",12345,900000000,"Architect")
+# employee1.display_your_id()
 
-employee2 = Employee("visualpath",30,"male",9876,100000,"Engineer")
-employee2.display_your_id()
+# employee2 = Employee("visualpath",30,"male",9876,100000,"Engineer")
+# employee2.display_your_id()
+
+# encapsulation
+
+# class Speaker:
+
+#     __max_price = 1000
+
+#     def sell(self):
+#         print("the selling price for this speaker is ",self.__max_price)
+
+#     def quote(self, quote_price):
+#         self.__max_price = quote_price
+
+# speaker1 = Speaker()
+
+# speaker1.sell()
+# speaker1.__max_price =2000
+# speaker1.sell()
+# speaker1.quote(3000)
+# speaker1.sell()
+
+# print(dir(speaker1))
+
+#polymorphism
+
+# class Shape:
+
+#     def render(self):
+#         print("Hey I'm rendering polygon shape")
+
+# class Circle(Shape):
+
+#     def render(self):
+#         # return super().render()
+#         print("Hey I'm rendering cirlce")
+
+# class Square(Shape):
+#     def render(self):
+#         print("I'm rendering square shape")
+
+# shape1 = Shape()
+# shape1.render()
+
+# shape2 = Circle()
+# shape2.render()
+
+# shape2 = Square()
+# shape2.render()
+
+
+a = "Sathis is taking python class right now"
+print(len(a))
+b = ["apple","orange","banana"]
+print(len(b))
+c = ("fruits","veggies","egg","fish")
+print(len(c))
