@@ -60,9 +60,18 @@ insts_ids = []
 
 # ec2_client.stop_instances(InstanceIds = insts_ids)
 
-ec2_client.run_instances(
+instance_response = ec2_client.run_instances(
     ImageId='ami-0ca2e925753ca2fb4',
     InstanceType='t2.micro',
-    MaxCount=2,
-    MinCount=2,
+    MaxCount=4,
+    MinCount=4,
 )
+inst_ids=[]
+for instance in instance_response["Instances"]:
+    inst_ids.append(instance["InstanceId"])
+    
+waiter = ec2_client.get_waiter('instance_running')
+waiter.wait(InstanceIds=inst_ids)
+print("Instance ",inst_ids," Created")
+# print(instance_response)
+print("Instances created")
